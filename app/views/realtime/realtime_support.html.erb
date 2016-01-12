@@ -9,7 +9,7 @@
 <script src="<%= realtime_server_url %>/socket.io/socket.io.js"></script>
 
 <script type='text/javascript'>
-	window.onload(function() {
+	window.onload = function() {
 		if (typeof io != 'undefined' && io != null) {
 			window.realtime.token = '<%= realtime_token %>';
 			window.realtime.userId = '<%= realtime_user_id %>';
@@ -28,7 +28,7 @@
 			// Queue up all incoming realtime messages.
 	  		window.realtime.socketIo.on('realtime_msg', function(message) {
 	    		window.realtime.messageQueue.push(message);
-			});
+			};
 		}
 	});
 </script>
